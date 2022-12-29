@@ -3,16 +3,132 @@
 }
 
 .container {
+    margin-top: 10%;
+    margin-bottom: 10%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project {
     flex: 1;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: auto;
+    z-index: -100;
 }
 
-.project:nth-of-type(even) {
-    background-color: blue;
+/* #region lollipop */
+.lolly-container {
+    position: relative;
+    z-index: 5;
+  }
+  
+  @keyframes lick {
+      from {
+          margin-top: -150%;
+        }
+        to {
+            margin-top: -200%;
+        }
+    }
+    
+    #1 {
+        background-color: white;
+        margin-top: 5em;
+        display: flex;
+        flex-direction: column;
+    align-items: center;
 }
+
+.mouth::before {
+    filter: drop-shadow(0px 10px 6px rgba(100, 100, 100, 50%));
+    z-index: 100;
+    margin-top: -3em;
+    content: "";
+    display: block;
+    height: 3em;
+    width: 14em;
+    background-color: salmon;
+    border-radius: 3em 3em 0 0;
+    background-image: radial-gradient(
+        ellipse at 50% -10%,
+      white 20%,
+      transparent 20%
+      );
+    }
+  
+  .mouth {
+      display: inherit;
+      flex-direction: inherit;
+      align-items: inherit;
+      border-radius: 0 0 5em 5em;
+      width: 10em;
+      height: 12em;
+      background-color: pink;
+      background-image: linear-gradient(
+          to left,
+          lightpink,
+      transparent,
+      salmon,
+      transparent,
+      lightpink
+    );
+}
+
+  .mouth::after {
+      margin-top: 0;
+    z-index: -2;
+    content: "";
+    display: block;
+    height: 3em;
+    width: 12em;
+    background-color: salmon;
+    border-radius: 0 0 3em 3em;
+}
+
+  
+    .lolly {
+        position: relative;
+    animation: 2s lick alternate infinite;
+    background-image: radial-gradient(ellipse at 25% 75%, darkred, transparent),
+      radial-gradient(20px at 65% 35%, white, transparent),
+      linear-gradient(to left, red, tomato, red);
+  
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid darkred;
+  }
+  
+  .lolly::before {
+    color: rgba(255, 255, 255, 50%);
+    font-variant: small-caps;
+    border: 1px solid darkred;
+    border-radius: 5px;
+    position: absolute;
+    height: 1.5em;
+    width: 5.1em;
+    margin-top: 1.75em;
+    content: "lollipop";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(45deg, darkred, red 60%, tomato 80%, red);
+  }
+  
+  .lolly::after {
+    position: absolute;
+    border-radius: 0.25em/0.25em;
+    z-index: -5;
+    content: "";
+    background-image: linear-gradient(to right, lightgray, whitesmoke, lightgray);
+    height: 15em;
+    width: 0.5em;
+  }
+/* #endregion */

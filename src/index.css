@@ -3,14 +3,14 @@
 }
 
 .container {
-    margin-top: 10%;
-    margin-bottom: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .project {
+    margin-top: 10%;
+    margin-bottom: 10%;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
         }
     }
     
-    #1 {
+    #lollipop {
         background-color: white;
         margin-top: 5em;
         display: flex;
@@ -132,3 +132,54 @@
     width: 0.5em;
   }
 /* #endregion */
+
+/* #region cherry pie  */
+.pie::before {
+  position: relative;
+  display: block;
+  content: "";
+  background-image: radial-gradient(at 100% 100%, transparent 71%, white 71%),
+  linear-gradient(to left, transparent 10%, darkgoldenrod 10%, darkgoldenrod 20%, transparent 20%, transparent 30%, darkgoldenrod 30%, darkgoldenrod 40%, transparent 40%, transparent 50%, darkgoldenrod 50%, darkgoldenrod 60%, transparent 60%, transparent 70%, darkgoldenrod 70%, darkgoldenrod 80%, transparent 80%), 
+  linear-gradient(to bottom, transparent 20%, darkgoldenrod 20%, darkgoldenrod 40%, transparent 40%, transparent 60%, darkgoldenrod 60%, darkgoldenrod 80%, transparent 80%), 
+  radial-gradient(at 100% 100%, transparent 65%, darkgoldenrod 65%, darkgoldenrod 71%, transparent 50%),
+  radial-gradient(at 100% 100%, goldenrod 71%, transparent 50%);
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: -1em;
+  padding-left: 1em;
+  border-bottom: 1em solid goldenrod;
+}
+
+.pie {
+  transform-style: preserve-3d;
+  background-color: darkred;
+  z-index: 1; 
+  width: 15em;
+  height: 5em;
+  transform: skewY(15deg);
+  border-bottom: 1.2em solid goldenrod;
+  position: relative;
+  border-left: 1em solid goldenrod;
+}
+
+.pie::after {
+  background-image: linear-gradient(-60deg, silver 22%, transparent 22%), 
+                    radial-gradient(transparent 57%, silver 57%), 
+                    linear-gradient(to right, transparent 84.3%, silver 80%), 
+                    linear-gradient(15deg, transparent, darkslategray 58%, transparent),
+                    radial-gradient(darkgray 30%, silver 30%, white 31%, silver 31%, silver 97%, black 97%, silver 100%);
+  position: relative;
+  display: block;
+  content: "";
+  top: -5em;
+  left: -6em;
+  background-color: silver;
+  border-radius: 50%;
+  transform: translateZ(-1px) skewY(-15deg);
+  z-index: -1;
+  width: 25em;
+  height: 13em;
+}
+
+/* #endregion  */

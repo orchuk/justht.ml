@@ -21,24 +21,22 @@
 
 @media screen and (max-width: 786px) {
   .project {
-    margin-top: 30%;
     margin-bottom: 30%;
     flex: 100%;
+  }
+  .project:first-of-type {
+    margin-top: 30%;
   }
 }
 
 @media (min-width:786px) and (max-width: 1024px) {
   .project {
-    margin-top: 15%;
-    margin-bottom: 15%;
     flex: 50%;
   }
 }
 
 @media (min-width: 1024px) {
   .project {
-    margin-top: 10%;
-    margin-bottom: 10%;
     flex: 33%;
   }
 }

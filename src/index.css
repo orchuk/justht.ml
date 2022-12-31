@@ -3,24 +3,56 @@
 }
 
 .container {
+  margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .project {
-  margin-top: 15%;
-  margin-bottom: 15%;
-  flex: 1;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: auto;
   z-index: -100;
+  align-items: center;
+  justify-content: center;
 }
 
+@media screen and (max-width: 786px) {
+  .project {
+    margin-top: 30%;
+    margin-bottom: 30%;
+    flex: 100%;
+  }
+}
+
+@media (min-width:786px) and (max-width: 1024px) {
+  .project {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    flex: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    flex: 33%;
+  }
+}
+
+.wide {
+  flex: 100%;
+}​
+
+
 /* #region lollipop */
+#lollipop {
+  background-color: lightblue;
+}
+
 .lolly-container {
   position: relative;
   z-index: 5;
@@ -34,14 +66,6 @@
   to {
     margin-top: -200%;
   }
-}
-
-#lollipop {
-  background-color: white;
-  margin-top: 5em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .mouth::before {
@@ -132,6 +156,7 @@
 /* #endregion */
 
 /* #region cherry pie  */
+
 .pie::before {
   position: relative;
   display: block;
@@ -150,6 +175,8 @@
 }
 
 .pie {
+  margin-top: 50%;
+  margin-bottom: 50%;
   transform-style: preserve-3d;
   background-color: darkred;
   z-index: 1;
@@ -162,10 +189,10 @@
 }
 
 .pie::after {
-  background-image: linear-gradient(-60deg, silver 22%, transparent 22%),
+  background-image: linear-gradient(-60deg, silver 22%, transparent 22%, transparent 78.5%, silver 78.5%),
     radial-gradient(transparent 57%, silver 57%),
     linear-gradient(to right, transparent 84.3%, silver 80%),
-    linear-gradient(15deg, transparent, darkslategray 58%, transparent),
+    linear-gradient(15deg, transparent, rgb(89, 128, 128) 58%, transparent),
     radial-gradient(darkgray 30%, silver 30%, white 31%, silver 31%, silver 97%, black 97%, silver 100%);
   position: relative;
   display: block;
@@ -181,13 +208,15 @@
 }
 
 /* #endregion  */
-
 /* #region candle */
+#candle {
+  margin-top: 20%;
+}
 
 .candle {
   z-index: 200;
-  height: 15sem;
-  width: 3em;
+  height: 10em;
+  width: 2em;
   background-image: linear-gradient(to right, lightgray, ghostwhite, lightgray);
 }
 
@@ -195,7 +224,7 @@
   display: block;
   content: '';
   height: 5em;
-  width: 3em;
+  width: 2em;
   top: -5em;
   position: relative;
   background-image: linear-gradient(to right, lightgray, ghostwhite, lightgray);
@@ -222,29 +251,29 @@
     box-shadow: 0.3em -0.3em 0 red, -0.1em -0.5em 0 red;
   }
   60% {
-      opacity: 30%;
-      box-shadow: 0.3em -0.3em 0 yellow, -0.1em -0.5em 0 red;
-    }
-    80% {
-      opacity: 90%;
-      box-shadow: 0.3em -0.3em 0 red, -0.1em -0.5em 0 yellow;
-    }
+    opacity: 30%;
+    box-shadow: 0.3em -0.3em 0 yellow, -0.1em -0.5em 0 red;
   }
-  
-  .candle::after {
-    content: '';
-    animation: 0.6s flicker infinite;
-    position: relative;
-    width: 1em;
-    height: 4em;
-    background-color: yellow;
-    top: -14em;
-    border-radius: 50%;
-    left: 1em;
-    box-shadow: 0.3em -0.3em 0 red, -0.1em -0.5em 0 orange;
-    display: block;
+  80% {
+    opacity: 90%;
+    box-shadow: 0.3em -0.3em 0 red, -0.1em -0.5em 0 yellow;
   }
-  .wax {
+}
+
+.candle::after {
+  content: '';
+  animation: 0.6s flicker infinite;
+  position: relative;
+  width: 1em;
+  height: 4em;
+  background-color: yellow;
+  top: -14em;
+  border-radius: 50%;
+  left: 0.5em;
+  box-shadow: 0.3em -0.3em 0 red, -0.1em -0.5em 0 orange;
+  display: block;
+}
+.wax {
     content: '';
     width: 0.5em;
     height: 10em;
@@ -284,21 +313,212 @@
     position: relative;
     display: inherit;
     flex-direction: inherit;
-    width: 5em;
-    height: 20em;
+    width: 3em;
+    height: 12em;
     border-top-color: gold;
-  background-color: darkgoldenrod;
-}
-.candelabra::after {
-  content: '';
+    background-color: darkgoldenrod;
+  }
+  .candelabra::after {
+    content: '';
+    
+    background-image:  linear-gradient(170deg, gold 35%, transparent 55%, darkgoldenrod ), linear-gradient(to bottom, gold 50%, darkgoldenrod 50%);
+    border-radius: 1em;
+    height: 2em;
+    position: relative;
+    bottom: -10em;
+    display: block;
+    width: 12em;
+  }
   
-  background-image:  linear-gradient(170deg, gold 35%, transparent 55%, darkgoldenrod ), linear-gradient(to bottom, gold 50%, darkgoldenrod 50%);
-  border-radius: 1em;
-  height: 2em;
-  position: relative;
-  bottom: -16em;
-  display: block;
-  width: 12em;
+  /* #endregion */
+  
+  /* #region plant */
+  
+  /* @keyframes wiggle-right {
+    from {
+      transform: skewY(-20deg) skewX(0);
+  }
+  to {
+    transform: skewY(-50deg) skewX(-5deg);
+  }
+}
+@keyframes wiggle-left {
+  from {
+    transform: skewY(20deg) skewX(0);
+  }
+  to {
+    transform: skewY(50deg) skewX(5deg);
+  }
+} */
+
+.water {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
 }
 
-/* #endregion */
+
+@keyframes turn {
+  from {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+  }
+}
+
+.foliage {
+  position: relative;
+  display: flex;
+  bottom: -2em;
+}
+
+.pot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  clip-path: ellipse(8em 16em at 50% 82%);    
+  width: 18em;
+  height: 20em;
+  background-color: goldenrod;
+  background-image: linear-gradient(-45deg, rgba(142, 128, 38, 0.5) 20%, 
+                                            transparent 20%, 
+                                            transparent 40%, 
+                                            rgba(142, 128, 38, 0.5) 40%,
+                                            rgba(142, 128, 38, 0.5) 60%,
+                                            transparent 60%, 
+                                            transparent 80%, 
+                                            rgba(142, 128, 38, 0.5) 80%),
+                      linear-gradient(45deg, rgba(142, 128, 38, 0.5) 20%, 
+                                            transparent 20%, 
+                                            transparent 40%, 
+                                            rgba(142, 128, 38, 0.5) 40%,
+                                            rgba(142, 128, 38, 0.5) 60%,
+                                            transparent 60%, 
+                                            transparent 80%, 
+                                            rgba(142, 128, 38, 0.5) 80%);
+}
+
+.door {
+  
+  width: 4em;
+  height: 8em;
+  background-color: steelblue;
+  content: "";
+  border-radius: 5em 5em 0 0;
+  border: 0.5em solid darkslategray;
+  border-bottom: unset;
+  bottom: -7.5em;
+  position: relative;
+}
+
+.pot::before {
+  width: 3em;
+  height: 3em;
+  background-color: steelblue;
+  content: "";
+  border-radius: 50%;
+  border: 0.5em solid darkslategray;
+  position: relative;
+  top: 11em;
+  left: 6em;
+}
+
+.pot::after {
+  width: 3em;
+  height: 3em;
+  background-color: steelblue;
+  content: "";
+  border-radius: 50%;
+  border: 0.5em solid darkslategray;
+  position: relative;
+  top: -7em;
+  left: -3.5em;
+}
+
+.algae {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: bottom center;
+}
+.algae:nth-of-type(1) {
+  transform: rotate(-60deg);
+}
+.algae:nth-of-type(2) {
+  transform: rotate(-40deg);
+}
+.algae:nth-of-type(3) {
+  transform: rotate(-20deg);
+}
+.algae:nth-of-type(4) {
+  transform: rotate(0deg);
+}
+.algae:nth-of-type(5) {
+  transform: rotate(20deg);
+}
+.algae:nth-of-type(6) {
+  transform: rotate(40deg);
+}
+.algae:nth-of-type(7) {
+  transform: rotate(60deg);
+}
+
+.algae:nth-of-type(odd) {
+  color: darkseagreen;
+  background-color: darkseagreen;
+}
+.algae:nth-of-type(even) {
+  color: darkgreen;
+  background-color: darkgreen;
+}
+
+
+.plant {
+  justify-content: center;
+  width: 1em;
+  height: 6em;
+  margin-top: -1em;
+  margin-bottom: -1em;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  background-color: inherit;
+  animation: 1s turn alternate infinite;
+}
+
+.plant:nth-child(even) {
+  animation-direction: alternate-reverse;
+}
+
+.plant::before {
+  color: inherit;
+  box-shadow: 0 -1em, 0 -2em, 0 -3em, 0 -4em;
+  border-radius: 50%;
+  /* animation: 2s wiggle-right alternate infinite; */
+  align-self: flex-start;
+  background-color: inherit;
+  color: inherit;
+  width: 5em;
+  height: 1em;
+  content: "";
+  transform: skewY(-40deg);
+}
+.plant::after {
+  border-radius: 50%;
+  box-shadow: 0 -1em, 0 -2em, 0 -3em, 0 -4em;
+  /* animation: 2s wiggle-left alternate infinite; */
+  transform: skewY(40deg);
+  align-self: flex-end;
+  background-color: inherit;
+  color: inherit;
+  width: 5em;
+  height: 1em;
+  content: "";
+}
+
+/* #endregion  */

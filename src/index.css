@@ -425,8 +425,8 @@
   border-radius: 50%;
   border: 0.5em solid darkslategray;
   position: relative;
-  top: 11em;
-  left: 6em;
+  top: 9em;
+  left: 5em;
 }
 
 .pot::after {
@@ -592,6 +592,110 @@
   width: 15em;
   height: 15em;
   content: "";
+}
+
+/* #endregion */
+
+/* #region rabbit */
+#rabbit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes pop {
+  from {
+    top: 20em;
+  } to {
+    top: 8em;
+  }
+  
+}
+
+.rabbit-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 1.75em;
+  width: 11.2em;
+  height: 16em;
+  z-index: 10;
+  overflow: hidden;
+  border-radius: 50%/10%;
+}
+
+.ear {
+  background-image:  radial-gradient(farthest-side ellipse at 50% 55%, rgba(128, 128, 128, 0.504), transparent);
+  transform-origin: bottom center;
+  transform: translatez(-1px) rotate(-20deg);
+  display: block;
+  position: relative;
+  top: -4em;
+  background-color: antiquewhite;
+  content: "";
+  height: 7em;
+  width: 3em;
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+}
+
+.ear:last-of-type {
+  transform: translatez(-1px) rotate(20deg);
+  top:-11em;
+  left: 5em;
+}
+
+.rabbit {
+  transform-style: preserve-3d;
+  z-index: 5;
+  animation: 2s pop alternate infinite;
+  transition: 0.5s;
+  position: relative;
+  top: 20em;
+  width: 8em;
+  height: 9em;
+  background-color: antiquewhite;
+  border-radius: 40% 40% 40% 40% /  50% 50% 40% 40%;
+  background-image: radial-gradient(1em circle at 3% 43%, rgba(255, 255, 255, 0.458), transparent), radial-gradient(1em circle at 94% 43%, rgba(255, 255, 255, 0.458), transparent), radial-gradient(2em circle at 5% 45%,  black 50%, transparent 50%),radial-gradient(2em circle at 95% 45%,  black 50%, transparent 50%), radial-gradient(6em circle at 50% 55%, rgba(128, 128, 128, 0.504), transparent), linear-gradient(to bottom, antiquewhite 49%, transparent 45%), radial-gradient(farthest-side ellipse at 50% 55%, pink 25%, transparent 25%), linear-gradient(to left, transparent 48%, maroon 48%, maroon 52%, transparent 52%);
+
+}
+
+.hat {
+  background-image: linear-gradient(to right, gray, silver, gray);
+  flex-shrink: 0;
+  width: 12em;
+  height: 16em;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hat::before {
+  position: relative;
+  top: -2em;
+  flex-shrink: 0;
+  background-color: silver;
+  content: "";
+  width: 16em;
+  border-radius: 50%;
+  height: 16em;
+  transform: rotateX(70deg);
+  
+  background-image: radial-gradient(farthest-side ellipse at 50% 50%, transparent 70%, darkgray 70%), linear-gradient(to left, rgb(71, 71, 71), rgb(167, 167, 167),rgb(72, 72, 72));
+}
+
+.hat::after {
+  background-image: linear-gradient(to right, gray, silver, gray);
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: gray;
+  content: "";
+  width: 12em;
+  height: 12em;
+  transform: rotateX(70deg);
 }
 
 /* #endregion */

@@ -1,7 +1,8 @@
+
+/* #region general */
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .container {
   margin: 0;
   display: flex;
@@ -44,11 +45,11 @@
 .wide {
   flex: 100%;
 }​
-
+/* #endregion */
 
 /* #region lollipop */
 #lollipop {
-  background-color: lightblue;
+  background-color: white;
 }
 
 .lolly-container {
@@ -376,10 +377,12 @@
 }
 
 .pot {
+  position: relative;
+  top: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  clip-path: ellipse(8em 16em at 50% 82%);    
+  clip-path: ellipse(8em 16em at 50% 70%);    
   width: 18em;
   height: 20em;
   background-color: goldenrod;
@@ -520,3 +523,75 @@
 }
 
 /* #endregion  */
+
+/* #region thinking with portals */
+
+.portals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 16em;
+  height: 30em;
+}
+.cube-container{
+  gap: 7.5em;
+  overflow-y: hidden;
+  position: relative;
+  width: 15em;
+  height: 15em;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.companion-cube {
+  animation: 1.5s drop infinite;
+  position: relative;
+  width: 7em;
+  top: -7em;
+  height: 7em;
+  flex-shrink: 0;
+  background-color: silver;
+  background-image: radial-gradient(5em, lightgray 25%, lightpink 25%, lightpink 40%, silver 40%, darkslategray 40%, darkslategray 45%, silver 45%, silver 55%, transparent 55%),
+                    linear-gradient(to bottom, transparent 30%, silver 30%, silver 35%, transparent 35%, transparent 65%, silver 65%, silver 70%, transparent 70%), 
+                    linear-gradient(to left, lightgray 30%, silver 30%, silver 35%, lightgray 35%, lightgray 65%, silver 65%, silver 70%, lightgray 70%);
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(0em) rotate(0deg);
+  } 
+  to {
+    transform: translateY(22.5em) rotate(360deg);
+  } 
+}
+
+.portals::before {
+  transform: rotateX(60deg);
+  flex: 100%;
+  border-radius: 50%;
+  background-color: coral;
+  border: 0.5em solid orangered;
+  width: 15em;
+  height: 15em;
+  top: 3em; 
+  position: relative;
+  content: "";
+}
+.portals::after {
+  z-index: -1;
+  position: relative;
+  bottom: 3em; 
+  transform: rotateX(-60deg);
+  flex: 100%;
+  border-radius: 50%;
+  background-color: lightblue;
+  border: 0.5em solid blue;
+  width: 15em;
+  height: 15em;
+  content: "";
+}
+
+/* #endregion */
